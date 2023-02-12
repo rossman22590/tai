@@ -108,7 +108,7 @@
                 const output = document.querySelector('.api-output');
                 const prompt = `you are a helpful, email-writing bot with a professional tone. I say please write me a correctly formatted email from a teacher to a parent about the subject of: ${text}. The email will go to a div with the pre element. You reply:`
                     
-                const keyresp = fetch('/.netlify/functions/hello')
+                const keyresp = fetch('/.netlify/functions/get-token')
                         .then(response => response.json()
                         )
                 emailButton.addEventListener('click', async () => {
