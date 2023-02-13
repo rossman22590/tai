@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<head lang="en" class="h-100">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins&family=Spectral&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <title>CommentCraft Page</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="stylesheet" href="styles.css">
+</head>
+    <body class="d-flex flex-column h-100">
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top"> 
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">
+                    <img src="img\favicon.ico" class="navbar-img" alt="TAi">
+                    TeacherAi
+                </a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarCollapse">
+              <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                  <li class="nav-item">
+                  <a class="nav-link "  href="index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                  <a class="nav-link "   href="emailgenie.html">EmailGenie</a>
+                  </li>
+                  <li class="nav-item">
+                  <a class="nav-link" href="lessonspark.html">LessonSpark</a>
+                  </li>
+                  </li>
+                  <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="reportcraft.html">CommentCraft</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="contactus.html">Contact Us</a>
+                  </li>
+              </ul>
+              </div>
+          </div>
+        </nav>
+        
+        <div class="container">
+            <h1>ReportCraft</h1>
+            <p>Effortlessly craft personalized report card comments with this intuitive comment generator tool.</p>
+            <div class="who-to">
+                <p>Who do you want to write a report comment for?</p>
+                    <div class="row row-cols-4">
+                        <div class="col">
+                            <p>Student Age:</p>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="studentAge" id="pre-school" checked>
+                                <label class="form-check-label" for="flexRadioDefault2">
+                                Pre-school
+                                </label>
+                            </div>
+                            
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="studentAge" id="early_elementary">
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Lower elementary
+                                </label>
+                            </div>
+                            
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="studentAge" id="upper_elementary">
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Upper elementary
+                                </label>
+                            </div>
+                            
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="studentAge" id="junior_high_student">
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Junior High School
+                                </label>
+                            </div>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="studentAge" id="senior_highschool_student">
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Senior high school
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                           <p> Overall Ability</p>
+                           <div class="form-check">
+                            <input class="form-check-input" type="radio" name="abilityLevel" id="above_grade_level" >
+                            <label class="form-check-label" for="flexRadioDefault2">
+                            Above Average
+                            </label>
+                        </div>
+                        
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="abilityLevel" id="on_grade_level" checked>
+                            <label class="form-check-label" for="flexRadioDefault1">
+                                Average
+                            </label>
+                        </div>
+                        
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="abilityLevel" id="below_grade_level">
+                            <label class="form-check-label" for="flexRadioDefault1">
+                                Below Average
+                            </label>
+                        </div>
+                        </div>
+
+                        <div class="col">
+                            <p>Comment length</p>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="wordCount" id="forty" checked>
+                                <label class="form-check-label" for="flexRadioDefault2">
+                                Shorter (40 words)
+                                </label>
+                            </div>
+                            
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="wordCount" id="one_hundred">
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Medium (100 words)
+                                </label>
+                            </div>
+                            
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="wordCount" id="two_hundred">
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Longer (200 words)
+                                </label>
+                            </div>
+
+                        </div>
+                        <div class="col">
+                            <p>Pronouns</p>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="pronouns" id="she" checked>
+                                <label class="form-check-label" for="flexRadioDefault2">
+                                she/her
+                                </label>
+                            </div>
+                            
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="pronouns" id="he">
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                he/him
+                                </label>
+                            </div>
+                            
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="pronouns" id="they">
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                 they/them/theirs
+                                </label>
+                            </div>
+
+                        </div>
+
+                    </div>
+            </div>
+
+            <div class="notes-section">
+                <br>
+                <p>Share their strengths and weaknesses - once you have typed both, click on Submit</p>
+                <div class="input-group mb-3">
+                    <input type="text" id="nameInput" placeholder="StudentName" aria-label="First name" class="form-control">
+                    <input type="text" id="strengthInput" placeholder="Strengths" aria-label="Strengths" class="form-control">
+                    <input type="text" id="improvementInput" placeholder="Areas for improvement" aria-label="Improvements" class="form-control">
+                    <button class="btn btn-primary" id="fetch-email-btn" type="button" >Submit</button>
+                </div>
+            
+            </div>
+            <br>
+            <!-- <div class="output container"> -->
+                <p class="api-output"></p>
+            </div>
+            
+
+        </div>
+        <script>
+            const emailButton = document.getElementById('fetch-email-btn')
+            const output = document.querySelector('.api-output')
+            
+
+            emailButton.addEventListener('click', async () => {
+                
+                const getAge = document.querySelector('input[name="studentAge"]:checked')
+                console.log(getAge)
+                const getAbility = document.querySelector('input[name="abilityLevel"]:checked')
+                console.log(getAbility)
+                const getWordCount = document.querySelector('input[name="wordCount"]:checked')
+                console.log(getWordCount)
+                const getPronouns = document.querySelector('input[name="pronouns"]:checked')
+                console.log(getPronouns)
+                console.log("Button clicked")
+                const studentName = document.getElementById("nameInput").value
+                console.log(studentName)
+                const strengths = document.getElementById("strengthInput").value
+                console.log(strengths)
+                const improvements = document.getElementById("improvementInput").value
+                console.log(improvements)
+                const prompt = `you are a helpful, report card-writing bot with a professional and warm tone. 
+                I say please write me a report card comment that is around ${getWordCount.id} words long 
+                for a student who is in ${getAge.id}. Their name is ${studentName} and their pronouns are ${getPronouns.id}. Their academic ability is ${getAbility.id}, their strengths are ${strengths} and their weaknesses are ${improvements}.`
+                
+                console.log(prompt)
+                
+                const keyresp = await fetch('/.netlify/functions/get-token')
+                .then(response => response.json()
+                )
+                // console.log("keyresp obtained")
+                // console.log(keyresp['message'])
+                // console.log(keyresp)
+
+                const response = await fetch(
+                        `https://api.openai.com/v1/completions`,
+                        {
+                            body: JSON.stringify({"model": "text-davinci-003", "prompt": prompt, "temperature": 0.86, "max_tokens": 200}),
+                            method: "POST",
+                            headers: {
+                                "content-type": "application/json",
+                                Authorization:`Bearer ` + keyresp['message'],
+                            },
+                                }
+                    ).then((response) => {
+                        
+                        if (response.ok) {
+                            response.json().then((json) => {
+                                output.textContent = json.choices[0].text.trim();
+                            });
+                        }
+                    });
+                
+                    console.log("Completed!");
+            
+                });
+            
+        
+    
+        </script>
+         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    
+    </body>
+</html>
