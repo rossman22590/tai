@@ -47,40 +47,84 @@
         <div class="container">
             <h1>LessonSpark</h1>
             <p>Unlock endless inspiration for your next lesson with our innovative idea generator.</p>
-            <div class="who-to">
-                <p>Who do you want to write an email to?</p>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="communityMembers" id="parent" checked>
-                    <label class="form-check-label" for="flexRadioDefault2">
-                    Parent
-                    </label>
-                </div>
-                <div class="form-check">
-                <input class="form-check-input" type="radio" name="communityMembers" id="administrator">
-                <label class="form-check-label" for="flexRadioDefault1">
-                    Leadership Team
-                </label>
-                </div>
-                <div class="form-check">
-                <input class="form-check-input" type="radio" name="communityMembers" id="student">
-                <label class="form-check-label" for="flexRadioDefault1">
-                    Student
-                </label>
+            <div class="what-for">
+                <p>Looking for lesson ideas? Tell us what you need!</p>
+                <div class="row row-cols-2">
+                    <div class="rightdiv col">
+                        <p>Student Age</p>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="studentAge" id="4-6_years_old" checked>
+                                <label class="form-check-label" for="flexRadioDefault2">
+                                4-6 years old
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="studentAge" id="7-10_years_old">
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                7-10 years old
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="studentAge" id="11-14_years_old">
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                11-14 years old
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="studentAge" id="5-18_years_old">
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                15-18 years old
+                                </label>
+                            </div>
+                    </div> 
+                    
+                    
+                    <div class="leftdiv col">
+                        <p>Lesson Duration</p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="lessonDuration" id="10_minutes">
+                            <label class="form-check-label" for="flexRadioDefault2">
+                            10 minutes
+                            </label>
+                        </div>
+                        <div class="form-check">
+                        <input class="form-check-input" type="radio" name="lessonDuration" id="30_minutes">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            30 minutes
+                        </label>
+                        </div>
+                        <div class="form-check">
+                        <input class="form-check-input" type="radio" name="lessonDuration" id="45_minutes" checked>
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            45 minutes
+                        </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="lessonDuration" id="one_hour">
+                            <label class="form-check-label" for="flexRadioDefault1">
+                                1 hour
+                            </label>
+                        </div>
+                    
+                    </div>
                 </div>
             </div>
             
 
-            <div class="notes-section">
-                <p>What is the email about?</p>
+            <div class="notes-section container">
+                <br>
+                <p>What is the lesson about? e.g. Subject, topic, purpose. </p>
+                <p>e.g. A PE lesson to review throwing and catching. </p>
                 <div class="input-group mb-3">
-                    <textarea id="textareaspace" class="form-control" placeholder="Write your notes in here (untested)..." aria-label="With textarea"></textarea>
+                    <textarea id="textareaspace" class="form-control" placeholder="Write your notes in here..." aria-label="With textarea"></textarea>
                     <button class="btn btn-primary" id="fetch-email-btn" type="button" >Submit</button>
                 </div>
-            </div>
-            <br>
-            <!-- <div class="output container"> -->
+                <br>
+                <!-- <div class="output container"> -->
                 <p class="api-output"></p>
+                
             </div>
+            
             
 
         </div>
@@ -90,26 +134,26 @@
             
 
             emailButton.addEventListener('click', async () => {
-                
-                const getSelectedMember = document.querySelector('input[name="communityMembers"]:checked')
-                console.log(getSelectedMember)
+                const getStudentAge = document.querySelector('input[name="studentAge"]:checked')
+                console.log(getStudentAge)
+                const getLessonDuration = document.querySelector('input[name="lessonDuration"]:checked')
+                console.log(getLessonDuration)
                 console.log("Button clicked")
                 const text = document.getElementById("textareaspace").value
                 console.log(text)
-                const prompt = `you are a helpful, email-writing bot with a professional tone. I say please write me a correctly formatted email from a teacher to a ${getSelectedMember.id} about the subject of: ${text}. The email will go to a div with the pre element. You reply:`
+                const prompt = `you are a helpful, lesson-writing bot with an upbeat tone. 
+                I say please write me a lesson plan lasting ${getLessonDuration.id} for students aged ${getStudentAge.id} about the subject of: ${text}. 
+                You reply:`
                 console.log(prompt)
                 
                 const keyresp = await fetch('/.netlify/functions/get-token')
                 .then(response => response.json()
                 )
-                // console.log("keyresp obtained")
-                // console.log(keyresp['message'])
-                // console.log(keyresp)
-
+               
                 const response = await fetch(
                         `https://api.openai.com/v1/completions`,
                         {
-                            body: JSON.stringify({"model": "text-davinci-003", "prompt": prompt, "temperature": 0.86, "max_tokens": 200}),
+                            body: JSON.stringify({"model": "text-davinci-003", "prompt": prompt, "temperature": 0.86, "max_tokens": 800}),
                             method: "POST",
                             headers: {
                                 "content-type": "application/json",
