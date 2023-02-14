@@ -179,6 +179,34 @@
             
 
         </div>
+        <section class="py-5 border-top" id="feedback-form">
+            <div class="feedback container mb-3">
+                <p class="m-b3" >Please let me know your feedback on CommentCraft here!</p>
+                <form name="contact" method="POST" data-netlify="true" data-netlify-recaptcha="true">
+                    <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Your Location (country):</label>
+                        <input type="text" class="form-control" id="subject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                    <label for="email">Email (optional):</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                    <label for="message">Feedback:</label>
+                    <textarea class="form-control" rows="10" id="message" name="message" required></textarea>
+                    </div>
+                    <div class="form-group mb-3">
+                    <div data-netlify-recaptcha="true"></div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </section>
         <script>
             const emailButton = document.getElementById('fetch-email-btn')
             const output = document.querySelector('.api-output')
