@@ -47,79 +47,49 @@
                 If you find it useful, have had any problems, or if you have any suggestions for new features, please leave a comment.</p>
                
                   <!-- Bootstrap form -->
-                  <form class="row g-3" name="contact" method="POST" data-netlify="true">
-                    <div class="mb-3">
-                      <label for="exampleInputEmail1" class="form-label">Your Name</label>
-                      <input name="name" type="name" class="form-control" id="name" >
-                    </div>
-                    <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">Your Location (country)</label>
-                        <input name="email" type="country" class="form-control" id="country">
-                    </div>
-                    <div class="input-group mb-3">
-                        <textarea name="message" id="textareaspace" class="form-control" placeholder="Please write your feedback here..." aria-label="With textarea"></textarea>
-                    </div>
-                
-                    <div class="row">
-                        <div class="row row-cols-2 mb-3">
-                            <div class="col">
-                                <p>Permissions</p>
-                                <div class=" form-check">
-                                    <input class="form-check-input" type="checkbox" value="yesTestimonial" id="yesTestimonial" checked>
-                                    <label name="checked" class="form-check-label" for="flexCheckDefault">
-                                    You can use my feedback in the 'Testimonial' section
-                                    </label>
-                                </div>
-                                <div class=" form-check ">
-                                    <input class="form-check-input" type="checkbox" value="noTestimonial" id="noTestimonial" >
-                                    <label class="form-check-label" for="flexCheckChecked">
-                                    Don't use my feedback in the 'Testimonial' section
-                                    </label>
-                                </div>
+                  <section class="py-5 border-top" id="feedback-form">
+                    <div class="feedback container mb-3">
+                        <form name="contact" method="POST" data-netlify="true" data-netlify-recaptcha="true">
+                            <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input type="text" class="form-control" id="name" name="name" required>
                             </div>
-                            <!-- <div class="col">
-                                <p>Location</p>
-                                <div class=" form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked>
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                    UK (Scotland)
-                                    </label>
-                                </div>
-                                <div class="col form-check mb-3">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
-                                    <label class="form-check-label" for="flexCheckChecked">
-                                    UK (England, NI, Wales)
-                                    </label>
-                                </div>
-                                <div class="col form-check mb-3">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
-                                    <label class="form-check-label" for="flexCheckChecked">
-                                    USA
-                                    </label>
-                                </div>
-                                <div class="col form-check mb-3">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
-                                    <label class="form-check-label" for="flexCheckChecked">
-                                    Australia
-                                    </label>
-                                </div>
-                                <div class="col form-check mb-3">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" >
-                                    <label class="form-check-label" for="flexCheckChecked">
-                                    Other
-                                    </label>
-                                </div> -->
+                            <div class="form-group">
+                                <label for="subject">Your Location (country):</label>
+                                <input type="text" class="form-control" id="subject" name="subject" required>
                             </div>
-                        </div>
-                        <div class="col-4">
+                            <div class="form-group">
+                            <label for="email">Email (optional):</label>
+                            <input type="email" class="form-control" id="email" name="email" >
+                            </div>
+                            
+                            <div class="form-group">
+                            <label for="message">Comments:</label>
+                            <textarea class="form-control" rows="10" id="message" name="message" required> </textarea>
+                            </div>
+                            <div class=" form-group">
+                                <input class="form-check-input" type="checkbox" name="yesTestimonial" id="yesTestimonial" checked>
+                                <label name="checked" class="form-check-label" for="flexCheckDefault">
+                                You can use my feedback in the 'Testimonial' section
+                                </label>
+                            </div>
+                            <div class=" form-group ">
+                                <input class="form-check-input" type="checkbox" name="noTestimonial" id="noTestimonial" >
+                                <label class="form-check-label" for="flexCheckChecked">
+                                Don't use my feedback in the 'Testimonial' section
+                                </label>
+                            </div>
+
+                            <div class="form-group mb-3">
+                            <div data-netlify-recaptcha="true"></div>
+                            </div>
                             <button type="submit" class="btn btn-primary">Submit</button>
-                        </div>
+                        </form>
                     </div>
-                    
-                  </form>
-                  
+                </section>
+                   
         
-            </div>
+        </div>
 
         
         
