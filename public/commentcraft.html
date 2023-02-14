@@ -90,21 +90,21 @@
                            <div class="form-check">
                             <input class="form-check-input" type="radio" name="abilityLevel" id="above_grade_level" >
                             <label class="form-check-label" for="flexRadioDefault2">
-                            Above Average
+                            Above level
                             </label>
                         </div>
                         
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="abilityLevel" id="on_grade_level" checked>
                             <label class="form-check-label" for="flexRadioDefault1">
-                                Average
+                                On level
                             </label>
                         </div>
                         
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="abilityLevel" id="below_grade_level">
                             <label class="form-check-label" for="flexRadioDefault1">
-                                Below Average
+                                Below level
                             </label>
                         </div>
                         </div>
@@ -163,7 +163,7 @@
 
             <div class="notes-section">
                 <br>
-                <p>Share their strengths and weaknesses - once you have typed both, click on Submit</p>
+                <p>Share their name, strengths and areas for improvement - once you have typed in each section, click on Submit.</p>
                 <div class="input-group mb-3">
                     <input type="text" id="nameInput" placeholder="StudentName" aria-label="First name" class="form-control">
                     <input type="text" id="strengthInput" placeholder="Strengths" aria-label="Strengths" class="form-control">
@@ -174,7 +174,12 @@
             </div>
             <br>
             <!-- <div class="output container"> -->
-                <p class="api-output"></p>
+                <p class="api-output">
+                    <button class="btn btn-primary" type="button" disabled>
+                        <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+                        Add your notes, click submit and await response...(up to 20 seconds)
+                    </button>
+                </p>
             </div>
             
 
