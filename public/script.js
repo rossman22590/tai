@@ -101,7 +101,64 @@ if (lessonButton) {
         });
 }
 
+// Function for CommentCraft page
+const commentButton = document.getElementById('fetch-comment-btn')
+if (commentButton) {
+    commentButton.addEventListener('click', async () => {
+        loadingButton.style.display = 'block'
+        const getAge = document.querySelector('input[name="studentAge"]:checked')
+        console.log(getAge)
+        const getAbility = document.querySelector('input[name="abilityLevel"]:checked')
+        console.log(getAbility)
+        const getWordCount = document.querySelector('input[name="wordCount"]:checked')
+        console.log(getWordCount)
+        const getPronouns = document.querySelector('input[name="pronouns"]:checked')
+        console.log(getPronouns)
+        console.log("Button clicked")
+        const studentName = document.getElementById("nameInput").value
+        console.log(studentName)
+        const strengths = document.getElementById("strengthInput").value
+        console.log(strengths)
+        const improvements = document.getElementById("improvementInput").value
+        console.log(improvements)
+        const prompt = `you are a helpful, report card-writing bot with a professional and warm tone. 
+        I say please write me a report card comment that is around ${getWordCount.id} words long 
+        for a student who is in ${getAge.id}. Their name is ${studentName} and their pronouns are ${getPronouns.id}. Their academic ability is ${getAbility.id}, their strengths are ${strengths} and their weaknesses are ${improvements}.`
+        
+        console.log(prompt)
+        
+        const keyresp = await fetch('/.netlify/functions/get-token')
+        .then(response => response.json()
+        )
+
+        const response = await fetch(
+                `https://api.openai.com/v1/completions`,
+                {
+                    body: JSON.stringify({"model": "text-davinci-003", "prompt": prompt, "temperature": 0.86, "max_tokens": 200}),
+                    method: "POST",
+                    headers: {
+                        "content-type": "application/json",
+                        Authorization:`Bearer ` + keyresp['message'],
+                    },
+                        }
+            ).then((response) => {
+                
+                if (response.ok) {
+                    response.json().then((json) => {
+                        output.textContent = json.choices[0].text.trim();
+                    });
+                }
+                outputContainer.style.display = 'block';
+                loadingButton.style.display = 'none';
+                selectFeedbackForm.style.display = 'block';
+                selectFeedbackForm.scrollTop = selectFeedbackForm.scrollHeight;
+            });
+        
+            console.log("Completed!");
     
+        });
+    
+}
 
 
 

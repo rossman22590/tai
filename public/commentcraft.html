@@ -42,7 +42,7 @@
         <!-- Body -->
         <main>
         <div class="container">
-            <h1>ReportCraft</h1>
+            <h1>CommentCraft</h1>
             <p>Effortlessly craft personalized report card comments with this intuitive comment generator tool.</p>
             <div class="who-to">
                 <p>Who do you want to write a report comment for?</p>
@@ -165,25 +165,30 @@
                 <br>
                 <p>Share their name, strengths and areas for improvement - once you have typed in each section, click on Submit.</p>
                 <div class="input-group mb-3">
-                    <input type="text" id="nameInput" placeholder="StudentName" aria-label="First name" class="form-control">
+                    <input type="text" id="nameInput" placeholder="Student Name" aria-label="First name" class="form-control">
                     <input type="text" id="strengthInput" placeholder="Strengths" aria-label="Strengths" class="form-control">
                     <input type="text" id="improvementInput" placeholder="Areas for improvement" aria-label="Improvements" class="form-control">
-                    <button class="btn btn-primary" id="fetch-email-btn" type="button" >Submit</button>
+                    <button class="btn btn-primary" id="fetch-comment-btn" type="button" >Submit</button>
                 </div>
             
             </div>
             <br>
-            <!-- <div class="output container"> -->
-                <p class="api-output">
-                    <button class="btn btn-primary" type="button" disabled>
-                        <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
-                        Add your notes, click submit and await response...(up to 20 seconds)
-                    </button>
-                </p>
+            <!-- Loading button -->
+            <button id="loadingButton" class="btn btn-primary" type="button" disabled>
+                <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+                Loading...(up to 20 seconds)
+            </button>
+            <!-- Output container -->
+            <div >
+                <div class="mb-3" id="output-container">
+                    <label for="exampleFormControlTextarea1" class="form-label">Your comment is here! Click the copy text button below (and 'allow' TAi to copy to clipboard) then you can paste into your Gmail/Outlook.</label>
+                    <textarea class="form-control api-output mb-3" id="myInput" rows="3"></textarea>
+                    <button class="btn btn-outline-dark" onclick="copyToClipboard()">Copy text</button>
+                </div>
             </div>
-            
-
         </div>
+    
+        <!-- Feedback Form -->
         <section class="py-5 border-top" id="feedback-form">
             <div class="feedback container mb-3">
                 <p class="m-b3" >Please let me know your feedback on CommentCraft here!</p>
@@ -212,68 +217,9 @@
                 </form>
             </div>
         </section>
-        <script>
-            const emailButton = document.getElementById('fetch-email-btn')
-            const output = document.querySelector('.api-output')
-            
 
-            emailButton.addEventListener('click', async () => {
-                
-                const getAge = document.querySelector('input[name="studentAge"]:checked')
-                console.log(getAge)
-                const getAbility = document.querySelector('input[name="abilityLevel"]:checked')
-                console.log(getAbility)
-                const getWordCount = document.querySelector('input[name="wordCount"]:checked')
-                console.log(getWordCount)
-                const getPronouns = document.querySelector('input[name="pronouns"]:checked')
-                console.log(getPronouns)
-                console.log("Button clicked")
-                const studentName = document.getElementById("nameInput").value
-                console.log(studentName)
-                const strengths = document.getElementById("strengthInput").value
-                console.log(strengths)
-                const improvements = document.getElementById("improvementInput").value
-                console.log(improvements)
-                const prompt = `you are a helpful, report card-writing bot with a professional and warm tone. 
-                I say please write me a report card comment that is around ${getWordCount.id} words long 
-                for a student who is in ${getAge.id}. Their name is ${studentName} and their pronouns are ${getPronouns.id}. Their academic ability is ${getAbility.id}, their strengths are ${strengths} and their weaknesses are ${improvements}.`
-                
-                console.log(prompt)
-                
-                const keyresp = await fetch('/.netlify/functions/get-token')
-                .then(response => response.json()
-                )
-                // console.log("keyresp obtained")
-                // console.log(keyresp['message'])
-                // console.log(keyresp)
-
-                const response = await fetch(
-                        `https://api.openai.com/v1/completions`,
-                        {
-                            body: JSON.stringify({"model": "text-davinci-003", "prompt": prompt, "temperature": 0.86, "max_tokens": 200}),
-                            method: "POST",
-                            headers: {
-                                "content-type": "application/json",
-                                Authorization:`Bearer ` + keyresp['message'],
-                            },
-                                }
-                    ).then((response) => {
-                        
-                        if (response.ok) {
-                            response.json().then((json) => {
-                                output.textContent = json.choices[0].text.trim();
-                            });
-                        }
-                    });
-                
-                    console.log("Completed!");
-            
-                });
-            
-        
-    
-        </script>
-         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
         </main>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+        <script src="script.js"></script>
     </body>
 </html>
