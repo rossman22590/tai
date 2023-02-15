@@ -5,7 +5,7 @@
 
   /* Used throughout */
   body {
-    padding-top: 75px;
+    /* padding-top: 75px; */
     font-family: 'Montserrat', sans-serif;
     background-color: #f8f9fa;
   }
@@ -22,10 +22,11 @@
   
   h1 {
     font-family: 'Poppins', sans-serif;
+    padding-top: 25px;
   }
   
   main > .container {
-      padding: 60px 15px 0;
+      padding: 40px 25px 0;
     }
   
 .api-output {

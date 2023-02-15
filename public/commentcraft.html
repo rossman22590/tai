@@ -11,39 +11,36 @@
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
     <link rel="stylesheet" href="styles.css">
 </head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0LH5JBRMVT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0LH5JBRMVT');
+</script>
     <body class="d-flex flex-column h-100">
-        <nav class="navbar navbar-expand-md navbar-dark fixed-top"> 
-            <div class="container-fluid">
-                <a class="navbar-brand" href="index.html">
-                    <img src="img\favicon.ico" class="navbar-img" alt="TAi">
-                    TeacherAi
-                </a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarCollapse">
-              <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                  <li class="nav-item">
-                  <a class="nav-link "  href="index.html">Home</a>
-                  </li>
-                  <li class="nav-item">
-                  <a class="nav-link "   href="emailgenie.html">EmailGenie</a>
-                  </li>
-                  <li class="nav-item">
-                  <a class="nav-link" href="lessonspark.html">LessonSpark</a>
-                  </li>
-                  </li>
-                  <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="reportcraft.html">CommentCraft</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="contactus.html">Contact Us</a>
-                  </li>
-              </ul>
-              </div>
-          </div>
+        <!-- NavBar-->
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container px-5">
+                <img src="img/favicon.ico" class="navbar-img" alt="TAi">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link "  href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link "  href="emailgenie.html">EmailGenie</a></li>
+                        <li class="nav-item"><a class="nav-link "  href="lessonspark.html">LessonSpark</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="commentcraft.html">CommentCraft</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contactus.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
         </nav>
-        
+        <!-- Body -->
+        <main>
         <div class="container">
             <h1>ReportCraft</h1>
             <p>Effortlessly craft personalized report card comments with this intuitive comment generator tool.</p>
@@ -93,21 +90,21 @@
                            <div class="form-check">
                             <input class="form-check-input" type="radio" name="abilityLevel" id="above_grade_level" >
                             <label class="form-check-label" for="flexRadioDefault2">
-                            Above Average
+                            Above level
                             </label>
                         </div>
                         
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="abilityLevel" id="on_grade_level" checked>
                             <label class="form-check-label" for="flexRadioDefault1">
-                                Average
+                                On level
                             </label>
                         </div>
                         
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="abilityLevel" id="below_grade_level">
                             <label class="form-check-label" for="flexRadioDefault1">
-                                Below Average
+                                Below level
                             </label>
                         </div>
                         </div>
@@ -166,7 +163,7 @@
 
             <div class="notes-section">
                 <br>
-                <p>Share their strengths and weaknesses - once you have typed both, click on Submit</p>
+                <p>Share their name, strengths and areas for improvement - once you have typed in each section, click on Submit.</p>
                 <div class="input-group mb-3">
                     <input type="text" id="nameInput" placeholder="StudentName" aria-label="First name" class="form-control">
                     <input type="text" id="strengthInput" placeholder="Strengths" aria-label="Strengths" class="form-control">
@@ -177,11 +174,44 @@
             </div>
             <br>
             <!-- <div class="output container"> -->
-                <p class="api-output"></p>
+                <p class="api-output">
+                    <button class="btn btn-primary" type="button" disabled>
+                        <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+                        Add your notes, click submit and await response...(up to 20 seconds)
+                    </button>
+                </p>
             </div>
             
 
         </div>
+        <section class="py-5 border-top" id="feedback-form">
+            <div class="feedback container mb-3">
+                <p class="m-b3" >Please let me know your feedback on CommentCraft here!</p>
+                <form name="contact" method="POST" data-netlify="true" data-netlify-recaptcha="true">
+                    <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Your Location (country):</label>
+                        <input type="text" class="form-control" id="subject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                    <label for="email">Email (optional):</label>
+                    <input type="email" class="form-control" id="email" name="email" >
+                    </div>
+                    
+                    <div class="form-group">
+                    <label for="message">Feedback:</label>
+                    <textarea class="form-control" rows="10" id="message" name="message" required>Feedback on CommentCraft: </textarea>
+                    </div>
+                    <div class="form-group mb-3">
+                    <div data-netlify-recaptcha="true"></div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </section>
         <script>
             const emailButton = document.getElementById('fetch-email-btn')
             const output = document.querySelector('.api-output')
@@ -244,6 +274,6 @@
     
         </script>
          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-    
+        </main>
     </body>
 </html>
