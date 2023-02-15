@@ -44,9 +44,10 @@
         <div class="container">
             <h1>EmailGenie</h1>
             <p>Quickly generate emails in a polite and professional tone.</p>
-            <p>To compose an email, choose the recipient, enter your message in the text box, and hit the submit button.</p>
-            <p>After composing your message, a 'Copy Text' button will appear on the page, which will automatically format the text for email and enable you to paste it directly into Gmail or Outlook etc. Please note that if a popup appears, remember to click on 'allow' so that TeacherAI can copy and paste from the clipboard.</p>
-            <div class="who-to">
+            <p>📧 To compose an email, choose the recipient, enter your message in the text box, and hit the submit button.</p>
+            <p>👯‍♀️ After composing your message, a 'Copy Text' button will appear on the page, which will automatically format the text for email and enable you to paste it directly into Gmail or Outlook etc. </p>
+            <p>👀 Please note that if a popup appears, remember to click on 'allow' so that TeacherAI can copy and paste from the clipboard.</p>
+            <div class="who-to border-top">
                 <p>Who do you want to write an email to?</p>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="communityMembers" id="parent" checked>
@@ -77,16 +78,16 @@
                 </div>
             </div>
             <br>
-           
-            <div class="output-container">
-                <button id="loadingButton" class="btn btn-primary" type="button" disabled>
-                    <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
-                    Loading...(up to 20 seconds)
-                </button>
-                <textarea id="myInput" class="api-output">
-                    
-            </textarea>
-                <button onclick="myFunction()">Copy text</button>
+            <button id="loadingButton" class="btn btn-primary" type="button" disabled>
+                <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+                Loading...(up to 20 seconds)
+            </button>
+            <div >
+                <div class="mb-3" id="output-container">
+                    <label for="exampleFormControlTextarea1" class="form-label">Your email is here! Click the copy text button below (and 'allow' TAi to copy to clipboard) then you can paste into your Gmail/Outlook.</label>
+                    <textarea class="form-control api-output" id="myInput" rows="3"></textarea>
+                    <button class="btn btn-outline-dark" onclick="copyToClipboard()">Copy text</button>
+                </div>
             </div>
             
 
@@ -130,6 +131,7 @@
                 const getSelectedMember = document.querySelector('input[name="communityMembers"]:checked')
                 console.log(getSelectedMember)
                 console.log("Button clicked")
+                const outputContainer = document.getElementById("output-container")
                 const text = document.getElementById("textareaspace").value
                 console.log(text)
                 const prompt = `you are a helpful, email-writing bot with a professional tone. I say please write me a correctly formatted email from a teacher to a ${getSelectedMember.id} about the subject of: ${text}. You reply:`
@@ -158,15 +160,16 @@
                             });
                         }
                         
-                        
-                        loadingButton.style.display = 'none'
-                        selectFeedbackForm.style.display = 'block'
+                        outputContainer.style.display = 'block';
+                        loadingButton.style.display = 'none';
+                        selectFeedbackForm.style.display = 'block';
+                        selectFeedbackForm.scrollTop = selectFeedbackForm.scrollHeight;
                     });
                 
                     console.log("Completed!");
             
                 });
-                function myFunction() {
+                function copyToClipboard() {
                     // Get the text field
                     var copyText = document.getElementById("myInput");
 
@@ -175,10 +178,10 @@
                     copyText.setSelectionRange(0, 99999); // For mobile devices
 
                     // Copy the text inside the text field
-                    navigator.clipboard.writeText(copyText.value);
-
-                    // Alert the copied text
-                    alert("Copied the text: " + copyText.value);
+                    navigator.clipboard.writeText(copyText.value).then(function(x) {
+                    alert("Copied to clipboard: " + copyText.value);
+                    });
+                    
                     }    
         
     

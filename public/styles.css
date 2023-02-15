@@ -10,6 +10,9 @@
     display: none;
 }
 
+#output-container {
+    display: none;
+}
   /* Used throughout */
   body {
     /* padding-top: 75px; */
