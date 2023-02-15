@@ -50,6 +50,55 @@ if (emailButton) {
         });
 }
 
+// Function for IdeaSpark page
+const ideaButton = document.getElementById('fetch-idea-btn')
+if (ideaButton) {
+    ideaButton.addEventListener('click', async () => {
+        loadingButton.style.display = 'block'
+        const getStudentAge = document.querySelector('input[name="studentAge"]:checked')
+        console.log(getStudentAge)
+        const getLessonDuration = document.querySelector('input[name="lessonDuration"]:checked')
+        console.log(getLessonDuration)
+        console.log("Button clicked")
+        const text = document.getElementById("textareaspace").value
+        console.log(text)
+        const prompt = `you are a helpful, bot with an upbeat tone who generates ideas for lesson activities so that teachers can use them. 
+        I say please write me 5 activities for students aged ${getStudentAge.id} that would help students to learn: ${text}. Each activity should not take more than ${getLessonDuration.id}. 
+        You reply:`
+        console.log(prompt)
+        
+        const keyresp = await fetch('/.netlify/functions/get-token')
+        .then(response => response.json()
+        )
+        
+        const response = await fetch(
+                `https://api.openai.com/v1/completions`,
+                {
+                    body: JSON.stringify({"model": "text-davinci-003", "prompt": prompt, "temperature": 0.86, "max_tokens": 800}),
+                    method: "POST",
+                    headers: {
+                        "content-type": "application/json",
+                        Authorization:`Bearer ` + keyresp['message'],
+                    },
+                        }
+            ).then((response) => {
+                console.log(text)
+                if (response.ok) {
+                    response.json().then((json) => {
+                        output.textContent = json.choices[0].text.trim();
+                        
+                    });
+                }
+                outputContainer.style.display = 'block';
+                loadingButton.style.display = 'none';
+                selectFeedbackForm.style.display = 'block';
+                selectFeedbackForm.scrollTop = selectFeedbackForm.scrollHeight;
+            });
+        
+            console.log("Completed!");
+    
+        });
+}
 
 // Function for LessonSpark page
 const lessonButton = document.getElementById('fetch-lesson-btn')
