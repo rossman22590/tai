@@ -1,7 +1,14 @@
 /* CSS for fonts and padding. N.B. Also need google font link in the head of each page to ensure that the correct font is used */
 
 /* Styling for Home page elements */
+/* Styling for show/hide of output div and feedback-form */
+#feedback-form {
+    display: none;
+}
 
+#loadingButton {
+    display: none;
+}
 
   /* Used throughout */
   body {
