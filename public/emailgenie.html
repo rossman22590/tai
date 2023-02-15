@@ -75,22 +75,16 @@
                 </div>
             </div>
             <br>
-            <!-- Container for output -->
-            <!-- <button class="btn btn-primary" type="button" disabled>
-                <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
-                <span class="visually-hidden">Loading...</span>
-              </button>
-              <div class="spinner-border text-primary" role="status">
-                <span class="visually-hidden">Loading...</span>
-              </div> -->
-            
-            <p class="api-output"><button class="btn btn-primary" type="button" disabled>
-                <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
-                Add your notes, click submit and await response...(up to 20 seconds)
-              </button>
-                
-            </p>
-            
+           
+            <div class="output-container">
+                <p id="myInput" class="api-output"><button class="btn btn-primary" type="button" disabled>
+                    <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+                    Add your notes, click submit and await response...(up to 20 seconds)
+                </button>
+                    
+                </p>
+                <button onclick="myFunction()">Copy text</button>
+            </div>
             
 
         </div>
@@ -163,7 +157,20 @@
                     console.log("Completed!");
             
                 });
-            
+                function myFunction() {
+                    // Get the text field
+                    var copyText = document.getElementById("myInput");
+
+                    // Select the text field
+                    copyText.select();
+                    copyText.setSelectionRange(0, 99999); // For mobile devices
+
+                    // Copy the text inside the text field
+                    navigator.clipboard.writeText(copyText.value);
+
+                    // Alert the copied text
+                    alert("Copied the text: " + copyText.value);
+                    }    
         
     
         </script>
