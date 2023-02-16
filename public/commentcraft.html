@@ -46,9 +46,9 @@
             <p>Effortlessly craft personalized report card comments with this intuitive comment generator tool.</p>
             <div class="who-to border-top">
                 <p>Who do you want to write a report comment for?</p>
-                    <div class="row row-cols-4">
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
                         <div class="col">
-                            <p>Student Age:</p>
+                            <p>STUDENT AGE:</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="studentAge" id="pre-school" checked>
                                 <label class="form-check-label" for="flexRadioDefault2">
@@ -86,7 +86,7 @@
                         </div>
 
                         <div class="col">
-                           <p> Overall Ability</p>
+                           <p> OVERALL PROGRESS</p>
                            <div class="form-check">
                             <input class="form-check-input" type="radio" name="abilityLevel" id="above_grade_level" >
                             <label class="form-check-label" for="flexRadioDefault2">
@@ -110,7 +110,7 @@
                         </div>
 
                         <div class="col">
-                            <p>Comment length</p>
+                            <p>COMMENT LENGTH</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="wordCount" id="forty" checked>
                                 <label class="form-check-label" for="flexRadioDefault2">
@@ -134,7 +134,7 @@
 
                         </div>
                         <div class="col">
-                            <p>Pronouns</p>
+                            <p>PRONOUNS</p>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="pronouns" id="she" checked>
                                 <label class="form-check-label" for="flexRadioDefault2">
@@ -163,9 +163,9 @@
 
             <div class="notes-section">
                 <br>
-                <p>Share their name, strengths and areas for improvement - once you have typed in each section, click on Submit.</p>
+                <p>Add their first name, strengths, and areas for improvement below. Once you have typed in all sections, click on Submit.</p>
                 <div class="input-group mb-3">
-                    <input type="text" id="nameInput" placeholder="Student Name" aria-label="First name" class="form-control">
+                    <input type="text" id="nameInput" placeholder="Name" aria-label="First name" class="form-control">
                     <input type="text" id="strengthInput" placeholder="Strengths" aria-label="Strengths" class="form-control">
                     <input type="text" id="improvementInput" placeholder="Areas for improvement" aria-label="Improvements" class="form-control">
                     <button class="btn btn-primary" id="fetch-comment-btn" type="button" >Submit</button>
@@ -192,7 +192,7 @@
         <section class="py-5 border-top" id="feedback-form">
             <div class="feedback container mb-3">
                 <p class="m-b3" >Please let me know your feedback on CommentCraft here!</p>
-                <form name="contact" method="POST" data-netlify="true" data-netlify-recaptcha="true">
+                <form name="commentcraft" method="POST" data-netlify="true" data-netlify-recaptcha="true">
                     <div class="form-group">
                     <label for="name">Name:</label>
                     <input type="text" class="form-control" id="name" name="name" required>
@@ -209,6 +209,30 @@
                     <div class="form-group">
                     <label for="message">Feedback:</label>
                     <textarea class="form-control" rows="10" id="message" name="message" required>Feedback on CommentCraft: </textarea>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="testimonial" value="YesTestimonial" checked>
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            You can use my feedback in the 'Testimonial' section
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="testimonial" vallue="NoTestimonial" >
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            Don't use my feedback in the 'Testimonial' section
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="teacher" value="YesTeacher" checked>
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            I am a teacher
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="teacher" vallue="NoTeacher" >
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            I am not a teacher
+                        </label>
                     </div>
                     <div class="form-group mb-3">
                     <div data-netlify-recaptcha="true"></div>

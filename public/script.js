@@ -63,7 +63,8 @@ if (ideaButton) {
         const text = document.getElementById("textareaspace").value
         console.log(text)
         const prompt = `you are a helpful, bot with an upbeat tone who generates ideas for lesson activities so that teachers can use them. 
-        I say please write me 5 activities for students aged ${getStudentAge.id} that would help students to learn: ${text}. Each activity should not take more than ${getLessonDuration.id}. 
+        I say please write me 5 activities for students aged ${getStudentAge.id} that would help students to learn: ${text}. Each activity should not take more than ${getLessonDuration.id}.
+        Use bulletpoints to separate the activities. 
         You reply:`
         console.log(prompt)
         

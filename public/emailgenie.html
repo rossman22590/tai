@@ -96,7 +96,7 @@
         <section class="py-5 border-top" id="feedback-form">
             <div class="feedback container mb-3">
                 <p class="m-b3" >Please let me know your feedback on EmailGenie here!</p>
-                <form name="contact" method="POST" data-netlify="true" data-netlify-recaptcha="true">
+                <form name="emailgenie" method="POST" data-netlify="true" data-netlify-recaptcha="true">
                     <div class="form-group">
                     <label for="name">Name:</label>
                     <input type="text" class="form-control" id="name" name="name" required>
@@ -112,6 +112,30 @@
                     <div class="form-group">
                     <label for="message">Feedback:</label>
                     <textarea class="form-control" rows="10" id="message" name="message" required>Feedback on EmailGenie: </textarea>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="testimonial" value="YesTestimonial" checked>
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            You can use my feedback in the 'Testimonial' section
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="testimonial" vallue="NoTestimonial" >
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            Don't use my feedback in the 'Testimonial' section
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="teacher" value="YesTeacher" checked>
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            I am a teacher
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="teacher" vallue="NoTeacher" >
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            I am not a teacher
+                        </label>
                     </div>
                     <div class="form-group mb-3">
                     <div data-netlify-recaptcha="true"></div>
