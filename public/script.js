@@ -9,13 +9,14 @@ const outputContainer = document.getElementById("output-container")
 if (emailButton) {
     emailButton.addEventListener('click', async () => {
         loadingButton.style.display = 'block'
+        loadingButton.scrollIntoView({ behavior: 'smooth' })
         const getSelectedMember = document.querySelector('input[name="communityMembers"]:checked')
-        console.log(getSelectedMember)
-        console.log("Button clicked")
+        // console.log(getSelectedMember)
+        // console.log("Button clicked")
         const text = document.getElementById("textareaspace").value
-        console.log(text)
+        // console.log(text)
         const prompt = `you are a helpful, email-writing bot with a professional tone. I say please write me a correctly formatted email from a teacher to a ${getSelectedMember.id} about the subject of: ${text}. You reply:`
-        console.log(prompt)
+        // console.log(prompt)
     
         const keyresp = await fetch('/.netlify/functions/get-token')
         .then(response => response.json()
@@ -45,7 +46,7 @@ if (emailButton) {
                 outputContainer.scrollIntoView({ behavior: 'smooth' })
             });
     
-            console.log("Completed!");
+            // console.log("Completed!");
     
         });
 }
@@ -55,18 +56,19 @@ const ideaButton = document.getElementById('fetch-idea-btn')
 if (ideaButton) {
     ideaButton.addEventListener('click', async () => {
         loadingButton.style.display = 'block'
+        loadingButton.scrollIntoView({ behavior: 'smooth' })
         const getStudentAge = document.querySelector('input[name="studentAge"]:checked')
-        console.log(getStudentAge)
+        // console.log(getStudentAge)
         const getLessonDuration = document.querySelector('input[name="lessonDuration"]:checked')
-        console.log(getLessonDuration)
-        console.log("Button clicked")
+        // console.log(getLessonDuration)
+        // console.log("Button clicked")
         const text = document.getElementById("textareaspace").value
-        console.log(text)
+        // console.log(text)
         const prompt = `you are a helpful, bot with an upbeat tone who generates ideas for lesson activities so that teachers can use them. 
         I say please write me 5 activities for students aged ${getStudentAge.id} that would help students to learn: ${text}. Each activity should not take more than ${getLessonDuration.id}.
         Use bulletpoints to separate the activities. 
         You reply:`
-        console.log(prompt)
+        // console.log(prompt)
         
         const keyresp = await fetch('/.netlify/functions/get-token')
         .then(response => response.json()
@@ -94,9 +96,10 @@ if (ideaButton) {
                 loadingButton.style.display = 'none';
                 selectFeedbackForm.style.display = 'block';
                 selectFeedbackForm.scrollTop = selectFeedbackForm.scrollHeight;
+                outputContainer.scrollIntoView({ behavior: 'smooth' })
             });
         
-            console.log("Completed!");
+            // console.log("Completed!");
     
         });
 }
@@ -106,17 +109,18 @@ const lessonButton = document.getElementById('fetch-lesson-btn')
 if (lessonButton) {
     lessonButton.addEventListener('click', async () => {
         loadingButton.style.display = 'block'
+        loadingButton.scrollIntoView({ behavior: 'smooth' })
         const getStudentAge = document.querySelector('input[name="studentAge"]:checked')
-        console.log(getStudentAge)
+        // console.log(getStudentAge)
         const getLessonDuration = document.querySelector('input[name="lessonDuration"]:checked')
-        console.log(getLessonDuration)
-        console.log("Button clicked")
+        // console.log(getLessonDuration)
+        // console.log("Button clicked")
         const text = document.getElementById("textareaspace").value
-        console.log(text)
+        // console.log(text)
         const prompt = `you are a helpful, lesson-writing bot with an upbeat tone. 
         I say please write me a lesson plan lasting ${getLessonDuration.id} for students aged ${getStudentAge.id} about the subject of: ${text}. 
         You reply:`
-        console.log(prompt)
+        // console.log(prompt)
         
         const keyresp = await fetch('/.netlify/functions/get-token')
         .then(response => response.json()
@@ -144,9 +148,10 @@ if (lessonButton) {
                 loadingButton.style.display = 'none';
                 selectFeedbackForm.style.display = 'block';
                 selectFeedbackForm.scrollTop = selectFeedbackForm.scrollHeight;
+                outputContainer.scrollIntoView({ behavior: 'smooth' })
             });
         
-            console.log("Completed!");
+            // console.log("Completed!");
     
         });
 }
@@ -156,26 +161,27 @@ const commentButton = document.getElementById('fetch-comment-btn')
 if (commentButton) {
     commentButton.addEventListener('click', async () => {
         loadingButton.style.display = 'block'
+        loadingButton.scrollIntoView({ behavior: 'smooth' })
         const getAge = document.querySelector('input[name="studentAge"]:checked')
-        console.log(getAge)
+        // console.log(getAge)
         const getAbility = document.querySelector('input[name="abilityLevel"]:checked')
-        console.log(getAbility)
+        // console.log(getAbility)
         const getWordCount = document.querySelector('input[name="wordCount"]:checked')
-        console.log(getWordCount)
+        // console.log(getWordCount)
         const getPronouns = document.querySelector('input[name="pronouns"]:checked')
-        console.log(getPronouns)
-        console.log("Button clicked")
+        // console.log(getPronouns)
+        // console.log("Button clicked")
         const studentName = document.getElementById("nameInput").value
-        console.log(studentName)
+        // console.log(studentName)
         const strengths = document.getElementById("strengthInput").value
-        console.log(strengths)
+        // console.log(strengths)
         const improvements = document.getElementById("improvementInput").value
-        console.log(improvements)
+        // console.log(improvements)
         const prompt = `you are a helpful, report card-writing bot with a professional and warm tone. 
         I say please write me a report card comment that is around ${getWordCount.id} words long 
         for a student who is in ${getAge.id}. Their name is ${studentName} and their pronouns are ${getPronouns.id}. Their academic ability is ${getAbility.id}, their strengths are ${strengths} and their weaknesses are ${improvements}.`
         
-        console.log(prompt)
+        // console.log(prompt)
         
         const keyresp = await fetch('/.netlify/functions/get-token')
         .then(response => response.json()
@@ -202,9 +208,10 @@ if (commentButton) {
                 loadingButton.style.display = 'none';
                 selectFeedbackForm.style.display = 'block';
                 selectFeedbackForm.scrollTop = selectFeedbackForm.scrollHeight;
+                outputContainer.scrollIntoView({ behavior: 'smooth' })
             });
         
-            console.log("Completed!");
+            // console.log("Completed!");
     
         });
     
@@ -224,7 +231,8 @@ function copyToClipboard() {
 
     // Copy the text inside the text field
     navigator.clipboard.writeText(copyText.value).then(function(x) {
-    alert("Copied to clipboard: " + copyText.value);
+        // alert("Copied to clipboard: " + copyText.value);
+        alert("Copied to clipboard: ");
     });
 }    
 
