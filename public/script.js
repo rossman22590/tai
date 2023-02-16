@@ -42,7 +42,7 @@ if (emailButton) {
                 outputContainer.style.display = 'block';
                 loadingButton.style.display = 'none';
                 selectFeedbackForm.style.display = 'block';
-                selectFeedbackForm.scrollTop = selectFeedbackForm.scrollHeight;
+                outputContainer.scrollIntoView({ behavior: 'smooth' })
             });
     
             console.log("Completed!");
