@@ -14,7 +14,8 @@ HTML, CSS, JavaScript, Bootstrap, and the OpenAI API.
 
 _What I Learned_
 How to create a project in GitHub projects, use a Jira board, and use GitHub Desktop more confidently. I also learned how to use the smoothscroll function using JS, add forms on Netlify, and set up Google Analytics. Using Bootstrap enabled me to have a site that was mobile-responsive and pretty decent-looking from the start.
-Using the OpenAI API:
+
+_Using the OpenAI API_
 I had used the OpenAI API in one of my previous projects (based on Tristan Wolff's tutorial for using a jQuery terminal to obtain input from a user, communicate the input to the API and process the response). However, this time I worked to have the user input be supplied through a form on the webpage, and to have the output appear on the page once the response was obtained from the API. I learned a little about prompt engineering to enable me to generate responses specifically for teachers. I also tried using the different models on offer from OpenAI, and although ada, curie and babbage models gave much faster responses than 'davinci', their responses were absolute rubbish! 😂
 
 _Plans for the Future_
