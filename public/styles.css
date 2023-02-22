@@ -2,6 +2,10 @@
 
 /* Styling for Home page elements */
 /* Styling for show/hide of output div and feedback-form */
+.testimonial {
+  background-color: #FAF6F4;
+}
+
 #feedback-form {
     display: none;
 }
