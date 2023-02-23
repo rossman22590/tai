@@ -25,7 +25,7 @@ if (emailButton) {
         const response = await fetch(
                 `https://api.openai.com/v1/completions`,
                 {
-                    body: JSON.stringify({"model": "text-davinci-003", "prompt": prompt, "temperature": 0.86, "max_tokens": 200}),
+                    body: JSON.stringify({"model": "text-davinci-003", "prompt": prompt, "temperature": 0.86, "max_tokens": 1000}),
                     method: "POST",
                     headers: {
                         "content-type": "application/json",
