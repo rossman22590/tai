@@ -31,8 +31,9 @@
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link "  href="index.html">Home</a></li>
                         <li class="nav-item"><a class="nav-link "  href="emailgenie.html">EmailGenie</a></li>
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="lessonspark.html">LessonSpark</a></li>
+                        <li class="nav-item"><a class="nav-link" href="ideaspark.html">IdeaSpark</a></li>
                         <li class="nav-item"><a class="nav-link" href="commentcraft.html">CommentCraft</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="lessonlaunch.html">LessonLaunch</a></li>
                         <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="contactus.html">Contact</a></li>
                     </ul>
@@ -42,11 +43,42 @@
     <!-- Body -->
         <main>
         <div class="container">
-            <h1>LessonSpark</h1>
-            <p>Unlock endless inspiration for your next lesson with our innovative idea generator.</p>
+            <h1>LessonLaunch *beta version*</h1>
+            <p>Our automated lesson planning tool provides you with a strong foundation to kickstart your teaching creativity and tailor your lesson plan to your students' needs.</p>
             <div class="what-for">
-                <p>Looking for lesson ideas? Tell us what you need!</p>
+                <p>Select the duration of the lesson and the age of your students, then add notes below on the lesson that you want to plan e.g. Subject, topic, purpose. </p>
+                <p> Finally, click the blue submit button.  N.B. Lessons with a longer duration will take longer for LessonLaunch to plan.</p>
+                <p><strong> Please exercise your professional judgement to ensure that the lesson plan obtained aligns with your expectations in terms of the objective, activities, and timing.</strong></p>
+                <br>
                 <div class="row row-cols-2">
+                    <div class="leftdiv col">
+                        <p>Lesson Duration</p>
+                        <div class="form-check">
+                        <input class="form-check-input" type="radio" name="lessonDuration" id="30_minutes">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            30 minutes
+                        </label>
+                        </div>
+                        <div class="form-check">
+                        <input class="form-check-input" type="radio" name="lessonDuration" id="45_minutes" checked>
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            45 minutes
+                        </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="lessonDuration" id="one_hour">
+                            <label class="form-check-label" for="flexRadioDefault1">
+                                1 hour
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="lessonDuration" id="90_minutes">
+                            <label class="form-check-label" for="flexRadioDefault2">
+                            90 minutes
+                            </label>
+                        </div>
+                    </div>
+
                     <div class="rightdiv col">
                         <p>Age of Students</p>
                             <div class="form-check">
@@ -76,42 +108,14 @@
                     </div> 
                     
                     
-                    <div class="leftdiv col">
-                        <p>Lesson Duration</p>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="lessonDuration" id="10_minutes">
-                            <label class="form-check-label" for="flexRadioDefault2">
-                            10 minutes
-                            </label>
-                        </div>
-                        <div class="form-check">
-                        <input class="form-check-input" type="radio" name="lessonDuration" id="30_minutes">
-                        <label class="form-check-label" for="flexRadioDefault1">
-                            30 minutes
-                        </label>
-                        </div>
-                        <div class="form-check">
-                        <input class="form-check-input" type="radio" name="lessonDuration" id="45_minutes" checked>
-                        <label class="form-check-label" for="flexRadioDefault1">
-                            45 minutes
-                        </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="lessonDuration" id="one_hour">
-                            <label class="form-check-label" for="flexRadioDefault1">
-                                1 hour
-                            </label>
-                        </div>
                     
-                    </div>
                 </div>
             </div>
             
 
             <div class="notes-section container">
                 <br>
-                <p>What is the lesson about? e.g. Subject, topic, purpose. </p>
-                <p>e.g. A PE lesson to review throwing and catching. </p>
+                <p>Example notes could be: "Introducing similes and metaphors" or "Reviewing the themes of Romeo & Juliet". </p>
                 <div class="input-group mb-3">
                     <textarea id="textareaspace" class="form-control" placeholder="Write your notes in here..." aria-label="With textarea"></textarea>
                     <button class="btn btn-primary" id="fetch-lesson-btn" type="button" >Submit</button>
@@ -120,13 +124,13 @@
                 <!-- Loading button -->
             <button id="loadingButton" class="btn btn-primary" type="button" disabled>
                 <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
-                Loading...(up to 20 seconds)
+                Loading...(up to 20-50 seconds)
             </button>
             <!-- Output container -->
             <div >
                 <div class="mb-3" id="output-container">
                     <label for="exampleFormControlTextarea1" class="form-label">Your lesson idea is here! Click the copy text button below (and 'allow' TAi to copy to clipboard) then you can paste into your Gmail/Outlook.</label>
-                    <textarea class="form-control api-output mb-3" id="myInput" rows="3"></textarea>
+                    <textarea class="form-control api-output mb-3" id="myInput"></textarea>
                     <button class="btn btn-outline-dark" onclick="copyToClipboard()">Copy text</button>
                 </div>
             </div>
@@ -135,7 +139,7 @@
         <!-- Feedback Form -->
         <section class="py-5 border-top" id="feedback-form">
             <div class="feedback container mb-3">
-                <p class="m-b3" >Please let me know your feedback on LessonSpark here!</p>
+                <p class="m-b3" >Please let me know your feedback on LessonLaunch here!</p>
                 <form name="contact" method="POST" data-netlify="true" data-netlify-recaptcha="true">
                     <div class="form-group">
                     <label for="name">Name:</label>
