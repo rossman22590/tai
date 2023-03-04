@@ -104,7 +104,7 @@ if (ideaButton) {
         });
 }
 
-// Function for LessonSpark page
+// Function for LessonLaunch page
 const lessonButton = document.getElementById('fetch-lesson-btn')
 if (lessonButton) {
     lessonButton.addEventListener('click', async () => {
@@ -118,7 +118,7 @@ if (lessonButton) {
         const text = document.getElementById("textareaspace").value
         // console.log(text)
         const prompt = `you are a helpful, lesson-writing bot with an upbeat tone. 
-        I say please write me a lesson plan lasting ${getLessonDuration.id} for students aged ${getStudentAge.id} about the subject of: ${text}. 
+        I say please write me an inventive, active and fun lesson plan lasting ${getLessonDuration.id} for students aged ${getStudentAge.id} about the subject of: ${text}. 
         You reply:`
         // console.log(prompt)
         

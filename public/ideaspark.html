@@ -33,6 +33,7 @@
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="ideaspark.html">IdeaSpark</a></li>
                         <li class="nav-item"><a class="nav-link "  href="emailgenie.html">EmailGenie</a></li>
                         <li class="nav-item"><a class="nav-link" href="commentcraft.html">CommentCraft</a></li>
+                        <li class="nav-item"><a class="nav-link " href="lessonlaunch.html">LessonLaunch</a></li>
                         <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="contactus.html">Contact</a></li>
                     </ul>
@@ -43,9 +44,11 @@
         <main>
         <div class="container">
             <h1>IdeaSpark</h1>
-            <p>Unlock endless inspiration for your next lesson with our innovative idea generator.</p>
+            <p>Unlock endless inspiration for your next lesson with our innovative idea generator!
+                IdeaSpark will generate five learning activities to support the topic/purpose that you add to the notes section below.
+            </p>
             <div class="what-for">
-                <p>Looking for ideas for learning activities? Tell us what you need!</p>
+                <p>Tell us what you need!</p>
                 <div class="border-top row row-cols-2">
                     <div class="rightdiv col">
                         <p>Age of Students</p>
@@ -111,7 +114,7 @@
             <div class="notes-section container">
                 <br>
                 <p>What lesson do you need ideas/activities for? Add notes on the subject, topic, and purpose. </p>
-                <p>e.g. A PE lesson to review throwing and catching. </p>
+                <p>e.g. "A PE lesson to review throwing and catching." or "Introducing coastal erosion and prevention" </p>
                 <div class="input-group mb-3">
                     <textarea id="textareaspace" class="form-control" placeholder="Write your notes in here..." aria-label="With textarea"></textarea>
                     <button class="btn btn-primary" id="fetch-idea-btn" type="button" >Submit</button>
@@ -125,7 +128,7 @@
             <!-- Output container -->
             <div >
                 <div class="mb-3" id="output-container">
-                    <label for="exampleFormControlTextarea1" class="form-label">Your ideas are here! Click the copy text button below (and 'allow' TAi to copy to clipboard) then you can paste into your Gmail/Outlook.</label>
+                    <label for="exampleFormControlTextarea1" class="form-label">Your ideas are here! Click the copy text button below (and 'allow' TAi to copy to clipboard) then you can copy and paste it.</label>
                     <textarea class="form-control api-output mb-3" id="myInput" rows="7"></textarea>
                     <button class="btn btn-outline-dark" onclick="copyToClipboard()">Copy text</button>
                 </div>
