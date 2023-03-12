@@ -1,4 +1,4 @@
-# TAi - An AI Teaching Assistant
+# TSI Teacher - An AI Teaching Assistant
 A website to help teachers reduce time spent on administrative tasks.
 Try it out at: https://teacherai.netlify.app/
 
